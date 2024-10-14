@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@500&display=swap');
+
+/* إضافة خط ناروتو إذا كان متاحًا أو استخدام خط مشابه */
+@import url('https://fonts.googleapis.com/css2?family=Naruto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "SUSE", sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /* تغيير الخلفية إلى لون مستوحى من ملابس ناروتو */
+    background: linear-gradient(135deg, #FFDD57, #FCA311);
+    /* إضافة أنيميشن خلفية */
+    animation: backgroundFade 3s ease-in-out forwards;
+}
+
+/* تعريف keyframes للأنيميشن */
+@keyframes backgroundFade {
+    from {
+        background: #4d59fb;
+    }
+    to {
+        background: linear-gradient(135deg, #FFDD57, #FCA311);
+    }
+}
+
+.wrapper{
+    width: 420px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 28px 28px 45px; 
+    /* إضافة ظل لإضفاء عمق */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    /* أنيميشن الظهور */
+    animation: fadeIn 1s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.wrapper header{
+    font-size: 29px;
+    font-weight: 500;
+    text-align: center;
+    color: #FF5733; /* لون برتقالي مشابه لناروتو */
+    margin-bottom: 20px;
+    /* إضافة ظل للنص */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.wrapper .search{
+    position: relative;
+    margin: 35px 0 18px;
+}
+
+.search input{
+    padding: 0 43px;
+    height: 53px;
+    font-size: 17px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #FF5733; /* تغيير لون الحدود */
+    transition: border 0.3s ease;
+    background: #FFF3E0; /* خلفية خفيفة */
+}
+
+.search input:focus{
+    padding: 0 41px;
+    border: 2px solid #C70039; /* تغيير لون الحدود عند التركيز */
+}
+
+.search input:focus ~ i{
+    color: #C70039;
+}
+
+.search input::placeholder{
+    color: #b8b8b8;
+}
+
+.search :where(i, span){
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    color: #FF5733; /* لون برتقالي */
+}
+
+.search i{
+    left: 18px;
+    font-size: 17px;
+    pointer-events: none;
+}
+
+.search span{
+    right: 15px;
+    font-size: 19px;
+    cursor: pointer;
+    display: none;
+    color: #C70039;
+}
+
+.search input:valid ~ span{
+    display: block;
+}
+
+.wrapper .info-text{
+    font-size: 13px;  
+    color: #9a9a9a;
+    margin: -3px 0 -10px;
+}
+
+.wrapper.active .info-text{
+    display: none;
+}
+
+.info-text span{
+    font-weight: 700;
+}
+
+.wrapper ul{
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.wrapper.active ul{
+    height: 315px;
+    opacity: 1;
+}
+
+ul .content{
+    max-height: 200px;
+    overflow-y: auto;
+    /* إضافة خلفية شفافة مع نمط مشابه لقماش ملابس ناروتو */
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+}
+
+ul .content::-webkit-scrollbar{
+    width: 0px;
+}
+
+.wrapper ul li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid #ccc;
+}
+
+ul li:last-child{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    border-bottom: 0px;
+}
+
+ul .word p{
+    font-size: 35px;
+    font-weight: 500;
+    color: #FF5733; /* لون برتقالي */
+}
+
+ul .word span{
+    font-size:12px;
+    color: #989898;
+}
+
+ul .word i{
+    cursor: pointer;
+    font-size: 19px;
+    color: #C70039;
+}
+
+.content li .details{
+    padding-left: 10px;
+    border-radius: 4px 0 0 4px;
+    border-left: 3px solid #4d59fb;
+}
+
+.content li .details p{
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.content li .details span{
+    font-size: 15px;
+    color: #7e7e7e;
+}
+
+.synonyms .details .list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.synonyms .details .list span{
+    margin-right: 5px;
+    text-decoration: underline;
+    cursor: pointer;
+    color: #FF5733; /* لون برتقالي */
+}
+
+/* إضافة أنيميشن إضافي للعناصر عند ظهورها */
+.wrapper.active ul li {
+    animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* إضافة تأثيرات مستوحاة من ناروتو مثل النماذج الدائرية */
+body::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('https://banner2.cleanpng.com/20180528/kww/avqvyz295.webp') repeat;
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}

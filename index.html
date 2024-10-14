@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary Website</title>
+    
+    <!-- الروابط الخاصة بالأنماط الخارجية -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="dictionary.png" type="image/x-icon">
+    <!-- سكريبت جافاسكريبت -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header>English Dictionary</header>
+        
+        <div class="search">
+            <input type="text" placeholder="Search a word" required>
+            <i class="fas fa-search"></i>
+            <span class="material-icons">close</span>
+        </div>
+        
+        <p class="info-text">
+            Type a word and press enter to get meaning, example, pronunciation, and synonyms of that typed word.
+        </p>
+        
+        <ul>
+            <li class="word">
+                <div class="details">
+                    <p>Word</p>
+                    <span>Pronunciation</span>
+                </div>
+                <i class="fas fa-volume-up"></i>
+            </li>
+            
+            <div class="content">
+                <li class="meaning">
+                    <div class="details">
+                        <p>Meaning</p>
+                        <span>Definition of the word.</span>
+                    </div>
+                </li>
+
+                <li class="example">
+                    <div class="details">
+                        <p>Example</p>
+                        <span>This is an example sentence using the word.</span>
+                    </div>
+                </li>
+
+                <li class="synonyms">
+                    <div class="details">
+                        <p>Synonyms</p>
+                        <div class="list">
+                            <span>Synonym1</span>,
+                            <span>Synonym2</span>,
+                            <span>Synonym3</span>
+                        </div>
+                    </div>
+                </li>
+            </div>
+        </ul> 
+    </div>
+</body>
+</html>
